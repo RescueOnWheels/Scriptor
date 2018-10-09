@@ -1,3 +1,4 @@
+# Checks for UV4L installation and runs it with predifined settings
 function camera() {
 PKG_OK=$(dpkg-query -W --showformat='${Status}\n' uv4l|grep "install ok installed")
 if [ "" == "$PKG_OK" ]; then
@@ -9,6 +10,7 @@ uv4l --driver raspicam --vflip --hflip --auto-video_nr --object-detection --min-
 echo "Camera initialized"
 }
 
+# Checks for NodeJS installation and Rover folder and runs it with the PM2 package
 function rover() {
 PKG_OK=$(dpkg-query -W --showformat='${Status}\n' nodejs|grep "install ok installed") 
 if [ "" == "$PKG_OK" ]; then
@@ -28,9 +30,11 @@ else
 fi
 }
 
+# Choice between all, rover or camera
 case "$1" in
 	all)
-	 echo "HEHEHE ALL"
+	 rover
+	 camera
         ;;
 	rover)
 	 rover
