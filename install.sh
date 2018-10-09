@@ -4,7 +4,7 @@
 #echo "Upgrade packages to latest version"
 #sudo apt-get dist-upgrade
 
-#Checks for NodeJS installation and installs it if needed
+# Checks for NodeJS installation and installs it if needed
 PKG_OK=$(dpkg-query -W --showformat='${Status}\n' nodejs|grep "install ok installed")
 echo "Checking for NodeJS:" $PKG_OK
 if [ "" == "$PKG_OK" ]; then
