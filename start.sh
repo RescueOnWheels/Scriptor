@@ -16,7 +16,7 @@ if [ "" == "$PKG_OK" ]; then
 	exit 1
 fi
 RVR_OK=$(cd ../Rover/)
-if [ "" == "$RVR_OK" }; then
+if [ "" == "$RVR_OK" ]; then
 	cd ../Rover/
 	echo "Startin Rover..."
 	npm run update

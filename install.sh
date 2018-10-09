@@ -19,7 +19,7 @@ if [ "" == "$PKG_OK" ]; then
 fi
 
 echo "Installing PM2"
-npm install pm2 -g
+sudo npm install pm2 -g
 
 echo "Installing Rover"
 cd ..
