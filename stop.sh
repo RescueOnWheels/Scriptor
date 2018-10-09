@@ -1,13 +1,24 @@
+function camera() {
+pkill uv4l
+}
+
+function rover() {
+pm2 stop index
+}
+
 case "$1" in
 	all)
-	 echo "HEHEHE ALL"
+	 camera
+	 rover
         ;;
 	rover)
-	 echo "ROver"
+	 rover
 	;;
 	camera)
-	 echo "camera"
+	 camera
 	;;
 	*)
 	 echo $"Usage: $0 {all|rover|camera}"
 esac
+
+
