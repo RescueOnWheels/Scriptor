@@ -32,7 +32,7 @@ case "$1" in
 	 echo "HEHEHE ALL"
         ;;
 	rover)
-	 echo "ROver"
+	 rover
 	;;
 	camera)
 	 camera
