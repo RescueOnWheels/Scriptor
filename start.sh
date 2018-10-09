@@ -19,7 +19,8 @@ RVR_OK=$(cd ../Rover/)
 if [ "" == "$RVR_OK" ]; then
 	cd ../Rover/
 	echo "Startin Rover..."
-	npm run update
+	git pull
+	npm i
 	pm2 start index.js
 else 
 	echo "Rover not properly installed. Try running installation script"
