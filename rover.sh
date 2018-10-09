@@ -1,3 +1,4 @@
+# Choice between start or stop script
 case "$1" in 
     start)
      ./start.sh "$2"
