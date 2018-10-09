@@ -23,6 +23,6 @@ npm install pm2 -g
 
 echo "Installing Rover"
 cd ..
-git clone git@github.com:RescueOnWheels/Rover.git --recursive
+git clone https://github.com/RescueOnWheels/Rover.git --recursive
 cd Scriptor/
 
