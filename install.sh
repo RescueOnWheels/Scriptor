@@ -18,7 +18,11 @@ if [ "" == "$PKG_OK" ]; then
   fi
 fi
 
-git clone git@github.com:RescueOnWheels/Rover.git
-cd Rover/
-npm install
+echo "Installing PM2"
+npm install pm2 -g
+
+echo "Installing Rover"
+cd ..
+git clone git@github.com:RescueOnWheels/Rover.git --recursive
+cd Scriptor/
 
