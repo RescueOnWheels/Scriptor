@@ -5,20 +5,34 @@
 #sudo apt-get dist-upgrade
 
 # Checks for NodeJS installation and installs it if needed
-PKG_OK=$(dpkg-query -W --showformat='${Status}\n' nodejs|grep "install ok installed")
-echo "Checking for NodeJS:" $PKG_OK
-if [ "" == "$PKG_OK" ]; then
+NODE_OK=$(dpkg-query -W --showformat='${Status}\n' nodejs|grep "install ok installed")
+echo "Checking for NodeJS:" $NODE_OK
+if [ "" == "$NODE_OK" ]; then
   echo "No NodeJS. Setting up NodeJS."
   curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
   sudo apt-get --force-yes --yes install nodejs
-  PKG_RECHECK=$(nodejs -v | grep "^v")
+  NODE_RECHECK=$(nodejs -v | grep "^v")
   echo "Rechecking for NodeJS, installed version:" $PKG_RECHECK
-  if [ "" == "$PKG_RECHECK" ]; then
+  if [ "" == "$NODE_RECHECK" ]; then
     echo "Failed to install NodeJS, exiting..."
     exit 1
   fi
 fi
 
+# Installs UV4l, warning: For stretch
+UV4L_OK=$(dpkg-query -W --showformat='${Status}\n' uv4l|grep "install ok installed")
+if [ "" == "$UV4L_OK"]; then 
+  echo "No UV4L. Setting up UV4l."
+  curl http://www.linux-projects.org/listing/uv4l_repo/lpkey.asc | sudo apt-key add -
+  echo "deb http://www.linux-projects.org/listing/uv4l_repo/raspbian/stretch stretch main" >> /etc/apt/sources.list
+  sudo apt-get install uv4l uv4l-raspicam uv4l-server
+  UV4l_RECHECK = $(dpkg-query -W --showformat='${Status}\n' uv4l|grep "install ok installed")
+  if [ "" == "$UV4l_RECHECK"]; then
+    echo "Failed to install UV4l, exiting..."
+    exit 1
+  fi
+fi
+  
 # Installs the PM2 package, which is a production process manager for Nodejs
 echo "Installing PM2"
 sudo npm install pm2 -g
