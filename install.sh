@@ -21,7 +21,7 @@ fi
 
 # Installs UV4l, warning: For stretch
 UV4L_OK=$(dpkg-query -W --showformat='${Status}\n' uv4l|grep "install ok installed")
-if [ "" == "$UV4L_OK"]; then 
+if [ "" == "$UV4L_OK" ]; then
   echo "No UV4L. Setting up UV4l."
   curl http://www.linux-projects.org/listing/uv4l_repo/lpkey.asc | sudo apt-key add -
   echo "deb http://www.linux-projects.org/listing/uv4l_repo/raspbian/stretch stretch main" >> /etc/apt/sources.list
