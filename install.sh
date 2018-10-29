@@ -39,8 +39,7 @@ sudo npm install pm2 -g
 
 # Clones the Rover repo with all it's submodules
 echo "Installing Rover"
-cd ..
-git clone https://github.com/RescueOnWheels/Rover.git rover --recursive
+git clone https://github.com/RescueOnWheels/Rover.git ~/rover --recursive
 
 # Checks if rest of scriptor is present
 if [ ! -f rover.sh ]; then
