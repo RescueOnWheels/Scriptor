@@ -45,7 +45,7 @@ git clone https://github.com/RescueOnWheels/Rover.git rover --recursive
 # Checks if rest of scriptor is present
 if [ ! -f rover.sh ]; then
     echo "Installing scriptor scripts"
-    wget https://git.io/fxQQu -o rover.sh;
-    wget https://git.io/fxQQ2 -o start.sh;
-    wget https://git.io/fxQQa -o stop.sh;
+    wget https://git.io/fxQQu -O rover.sh;
+    wget https://git.io/fxQQ2 -O start.sh;
+    wget https://git.io/fxQQa -O stop.sh;
 fi
