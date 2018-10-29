@@ -41,7 +41,6 @@ sudo npm install pm2 -g
 echo "Installing Rover"
 cd ..
 git clone https://github.com/RescueOnWheels/Rover.git rover --recursive
-cd Scriptor/
 
 # Checks if rest of scriptor is present
 if [ ! -f rover.sh ]; then
