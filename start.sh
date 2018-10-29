@@ -6,7 +6,7 @@ if [ "" == "$PKG_OK" ]; then
 	exit 1
 fi
 echo "Installation OK. Startin camera"
-uv4l --driver raspicam --vflip --hflip --auto-video_nr --object-detection --min-object-size 80 80 --main-classifier /usr/share/uv4l/raspicam/lbpcascade_frontalface.xml --object-detection-mode accurate_detection --width 640 --height 360 --framerate 15 --encoding h264 --enable-server
+uv4l --driver raspicam --vflip --hflip --auto-video_nr --object-detection --min-object-size 80 80 --main-classifier /usr/share/uv4l/raspicam/lbpcascade_frontalface.xml --object-detection-mode accurate_detection --width 640 --height 360 --framerate 15 --encoding h264 --quality 5 --enable-server
 echo "Camera initialized"
 }
 
@@ -19,7 +19,7 @@ if [ "" == "$PKG_OK" ]; then
 fi
 RVR_OK=$(cd ../Rover/)
 if [ "" == "$RVR_OK" ]; then
-	cd ../Rover/
+	cd ../rover/
 	echo "Startin Rover..."
 	git pull
 	npm i
