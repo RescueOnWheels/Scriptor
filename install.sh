@@ -45,7 +45,8 @@ cd Scriptor/
 
 # Checks if rest of scriptor is present
 if [ ! -f rover.sh ]; then
-    wget -q https://git.io/fxQQu -o rover.sh;
-    wget -q https://git.io/fxQQ2 -o start.sh;
-    wget -q https://git.io/fxQQa -o stop.sh;
+    echo "Installing scriptor scripts"
+    wget https://git.io/fxQQu -o rover.sh;
+    wget https://git.io/fxQQ2 -o start.sh;
+    wget https://git.io/fxQQa -o stop.sh;
 fi
