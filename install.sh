@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Quite unnecessary to run, therefore commented. Uncomment if needed
 #echo "Updating Package list"
 #sudo apt-get update
@@ -40,6 +41,6 @@ sudo npm install pm2 -g
 # Clones the Rover repo with all it's submodules
 echo "Installing Rover"
 cd ..
-git clone https://github.com/RescueOnWheels/Rover.git --recursive
+git clone https://github.com/RescueOnWheels/Rover.git rover --recursive
 cd Scriptor/
 
