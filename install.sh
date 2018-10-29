@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 # Quite unnecessary to run, therefore commented. Uncomment if needed
 #echo "Updating Package list"
 #sudo apt-get update
@@ -44,3 +43,9 @@ cd ..
 git clone https://github.com/RescueOnWheels/Rover.git rover --recursive
 cd Scriptor/
 
+# Checks if rest of scriptor is present
+if [ ! -f rover.sh ]; then
+    wget https://git.io/fxQQu;
+    wget https://git.io/fxQQ2;
+    wget https://git.io/fxQQa;
+fi
