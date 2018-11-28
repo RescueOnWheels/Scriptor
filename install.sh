@@ -57,7 +57,7 @@ function install_complete() {
 }
 
 function download_latest_files() {
-  if [ -d "~/rover" ]; then
+  if [ -d ~/rover ]; then
     install_log "Updating Rover files..."
     
     open ~/rover
@@ -69,8 +69,15 @@ function download_latest_files() {
     git clone https://github.com/RescueOnWheels/Rover.git ~/rover --recursive
   fi
 
-  install_log "Downloading Scriptor files..."
-  git clone https://github.com/RescueOnWheels/Scriptor ~/scripts --recursive
+  if [ -d ~/scripts ]; then
+    install_log "Updating Scriptor files..."
+    
+    open ~/scripts
+    git pull
+  else
+    install_log "Downloading Scriptor files..."
+    git clone https://github.com/RescueOnWheels/Scriptor ~/scripts
+  fi
 }
 
 function install_rover() {
