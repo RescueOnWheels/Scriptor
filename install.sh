@@ -41,7 +41,7 @@ function install_dependencies() {
   echo "deb http://www.linux-projects.org/listing/uv4l_repo/raspbian/stretch stretch main" >> /etc/apt/sources.list
 
   install_log "Installing required packages"
-  sudo apt-get install nodejs git uv4l uv4l-raspicam uv4l-server || install_error "Unable to install dependencies"
+  sudo apt-get install gcc g++ make nodejs git uv4l uv4l-raspicam uv4l-server || install_error "Unable to install dependencies"
 }
 
 function install_complete() {
