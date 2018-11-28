@@ -60,7 +60,7 @@ function download_latest_files() {
   if [ -d ~/rover ]; then
     install_log "Updating Rover files..."
     
-    open ~/rover
+    cd ~/rover
     git pull
     npm run init
     npm install
@@ -72,7 +72,7 @@ function download_latest_files() {
   if [ -d ~/scripts ]; then
     install_log "Updating Scriptor files..."
     
-    open ~/scripts
+    cd ~/scripts
     git pull
   else
     install_log "Downloading Scriptor files..."
